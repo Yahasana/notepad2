@@ -416,8 +416,8 @@ enum ANSIArtStyleIndex {
 };
 
 // folding marker
-#define FoldingMarkerLineColorDefault	RGB(0x80, 0x80, 0xFF)
-#define FoldingMarkerFillColorDefault	RGB(0xAD, 0xD8, 0xE6)
+#define FoldingMarkerLineColorDefault	RGB(0xC8, 0xC8, 0xC8)
+#define FoldingMarkerFillColorDefault	RGB(0xEB, 0xE7, 0xDF)
 #define FoldingMarkerLineColorDark		RGB(0x80, 0x80, 0x80)
 #define FoldingMarkerFillColorDark		RGB(0x60, 0x60, 0x60)
 

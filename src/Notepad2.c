@@ -5535,10 +5535,10 @@ void LoadSettings(void) {
 
 	bMatchBraces = IniSectionGetBool(pIniSection, L"MatchBraces", true);
 	bHighlightCurrentBlock = IniSectionGetBool(pIniSection, L"HighlightCurrentBlock", true);
-	iValue = IniSectionGetInt(pIniSection, L"HighlightCurrentLine", 10 + LineHighlightMode_OutlineFrame);
+	iValue = IniSectionGetInt(pIniSection, L"HighlightCurrentLine", 10 + LineHighlightMode_BackgroundColor);
 	bHighlightCurrentSubLine = (iValue >= 10);
-	iHighlightCurrentLine = (LineHighlightMode)clamp_i(iValue % 10, LineHighlightMode_None, LineHighlightMode_OutlineFrame);
-	bShowIndentGuides = IniSectionGetBool(pIniSection, L"ShowIndentGuides", false);
+	iHighlightCurrentLine = (LineHighlightMode)clamp_i(iValue % 10, LineHighlightMode_None, LineHighlightMode_BackgroundColor);
+	bShowIndentGuides = IniSectionGetBool(pIniSection, L"ShowIndentGuides", true);
 
 	autoCompletionConfig.bIndentText = IniSectionGetBool(pIniSection, L"AutoIndent", true);
 	autoCompletionConfig.bCloseTags = IniSectionGetBool(pIniSection, L"AutoCloseTags", true);
@@ -5877,7 +5877,7 @@ void SaveSettings(bool bSaveSettingsNow) {
 	IniSectionSetBoolEx(pIniSection, L"MatchBraces", bMatchBraces, true);
 	IniSectionSetBoolEx(pIniSection, L"HighlightCurrentBlock", bHighlightCurrentBlock, true);
 	int iValue = (int)iHighlightCurrentLine + ((int)bHighlightCurrentSubLine*10);
-	IniSectionSetIntEx(pIniSection, L"HighlightCurrentLine", iValue, 10 + LineHighlightMode_OutlineFrame);
+	IniSectionSetIntEx(pIniSection, L"HighlightCurrentLine", iValue, 10 + LineHighlightMode_BackgroundColor);
 	IniSectionSetBoolEx(pIniSection, L"ShowIndentGuides", bShowIndentGuides, false);
 
 	IniSectionSetBoolEx(pIniSection, L"AutoIndent", autoCompletionConfig.bIndentText, true);
